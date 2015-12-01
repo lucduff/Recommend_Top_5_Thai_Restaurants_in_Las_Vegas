@@ -1,0 +1,1 @@
+This directory holds the Jupyter Notebooks using R whose main purposes are to recommend top 5 Thai restaurants in Las Vegas, to extend models using recommenderlab for R, and to evaluate the accuracy of the models.
