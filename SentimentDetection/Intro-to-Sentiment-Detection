@@ -1,0 +1,1 @@
+This directory holds the Jupyter Notebook using Python 2.7 for the detection and scoring of sentiments in restaurant reviews. The exercise makes the most of two sentiment lexicons: AFINN and Yelp Restaurant Lexicon.
