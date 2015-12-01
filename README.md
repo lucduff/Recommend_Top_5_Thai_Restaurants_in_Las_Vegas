@@ -1,4 +1,4 @@
-# Recommend_Top_5_Thai_Restaurants_in_Las_Vegas
+# Recommend_Top_5_Thai_Restaurants_in_LAS
 
 PURPOSE
 
