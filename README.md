@@ -8,34 +8,12 @@ PROJECT OUTLINE
 
 1-  Delivering Working Data Files for the Project (Directory: Data-Files)
 
-    In the Data-Files directory, we provide the working csv files for the project although we do not provide the code used in Python/R to develop them. We do not provide the original Yelp Academic data files either. For this project, we used exclusively the business and review files. We must also warn you that we launched the development of the working data file by using the word 'restaurant' as a filter in the 'categories' column. We acknowledged that Yelp identifies the 'categories' feature in its business dataset as 'localized category names'. We narrowed the working dataset not only to users who reviewed at least one restaurant in Phoenix for alignment purposes with the Yelp Restaurant lexicon, but also subsequently to Thai restaurants to satisfy R and RAM limitations.
+In the Data-Files directory, we provide the working csv files for the project although we do not provide the code used in Python/R to develop them, nor do we provide the original Yelp Academic data datasets. For this project, we used exclusively the business and review datasets from the Yelp Dataset Challenge (2015)(http://www.yelp.com/dataset_challenge). We would like to also warn you that, the working data file used in this project was developed as a starting point by using the word 'Restaurant' as a 'contain' filter in the 'categories' column. We acknowledge that Yelp describes the 'categories' feature as 'localized category names' in its business dataset. Furthermore, we narrowed the working data file not only to users who reviewed at least one restaurant in Phoenix for alignment purposes with the Yelp Restaurant Sentiment Lexicon (http://saifmohammad.com/WebPages/lexicons.html; http://saifmohammad.com/Lexicons/Yelp-restaurant-reviews.zip), but also subsequently to Thai restaurants to satisfy R and RAM limitations. We also deleted three records that did not have user IDs from the working data file.
 
-2-  Scoring Sentiments in Reviews Using Python NLTK and TweetTokenizer (Directory: SentimentDetection)
+2-  Scoring Sentiments in Reviews Using Python NLTK and TweetTokenizer (Directory: Sentiment-Detection)
 
-
+In the Sentiment-Detection directory, we provide one Jupyter Notebook using Python, NLTK and TweetTokenizer to perform a detection exercise of sentiments found in restaurant reviews, to sum up sentiment scores and to scale the scores to a 1-to-5 format. We scaled the scores early in the project for alignment and comparison purposes with the review stars (ratings given by users) found in each review. For the purpose of having one unique rating/score per user-business in the recommender's rating matrices, we selected (1) to average ratings per user-business and (2) to combine all reviews per unique user-business in one review for sentiment score calculations. We acknowledge that these ratings and reviews covered roughly a period of ten years and that the sentiment of users and the quality of restaurants change over time. We made this decision to expedite the project. One might want to consider more recent ratings/reviews to deliver recommendations to users in a real case scenario. 
 
 3-  Recommending top 5 Thai restaurants in Las Vegas Using recommenderlab for R (Directory: Recommender-Models)
 
-LICENSE
-
-The MIT License (MIT)
-
-Copyright (c) 2015 Luc Duff
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+In the Recommender-Models directory, we provide five Jupyter Notebooks using R and the recommenderlab package to perform a top 5 recommendation exercise with ratings given by users and with sentiment scores calculated from user reviews. We select sentiment scores calculated with two lexicons, rough and scaled to 1-to-5 with 0.5 increments. We attempt to compare the performance of each of these recommendation exercises with limited success as recommenderlab does not allow to carry over the same user-restaurant variables in random data samples for cross-analysis purposes. Nevertheless, we are able to provide normalization and similarity determination methods that best suit the project and its assumptions. As the working data file focuses on users who submitted at least one review of a restaurant in Phoenix, the Las Vegas restaurants rarely make it to the top 5. Therefore, the prediction matrices are used to come up with top 5 recommendations of Thai Restaurants in Las Vegas with a significant decrease in accuracy. May this project serve as a spring board for further development in recommender systems.
